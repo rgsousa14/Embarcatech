@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Rafael Gonçalves Sousa",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -3.25,
+      "left": 3.55,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 80.8,
+      "left": -85.3,
+      "attrs": { "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "rgb1:G", "pico:GP11", "green", [ "v0" ] ],
+    [ "rgb1:B", "pico:GP12", "green", [ "v0" ] ],
+    [ "rgb1:R", "pico:GP13", "green", [ "v0" ] ],
+    [ "pico:GND.4", "rgb1:COM", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
